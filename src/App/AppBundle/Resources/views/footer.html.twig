@@ -1,0 +1,32 @@
+{% block footer %}
+        
+    <article class="col-2-3">
+        <div class="wrap-col">
+        <h4>Contact Form:</h4>
+        <form id="contact-form" method="post">
+            <fieldset>
+                <label><input name="email" value="Email" onBlur="if(this.value=='') this.value='Email'" onFocus="if(this.value =='Email' ) this.value=''" /></label>
+                <label><input name="subject" value="Subject" onBlur="if(this.value=='') this.value='Subject'" onFocus="if(this.value =='Subject' ) this.value=''" /></label>
+                <textarea onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>
+                <div class="buttons">
+                    <a href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
+                    <a href="#" onClick="document.getElementById('contact-form').submit()">Send</a>
+                </div>                                          
+            </fieldset>           
+        </form>
+        </div>
+    </article>
+    <article class="col-1-3">
+        <div class="wrap-col">
+        <h4 class="indent-bot">Link to Us:</h4>
+        <ul class="list-services border-bot img-indent-bot">
+            <li><a href="#">Facebook</a></li>
+            <li><a class="item-1" href="#">Twitter</a></li>
+            <li><a class="item-2" href="#">Picassa</a></li>
+            <li><a class="item-3" href="#">You Tube</a></li>
+        </ul>
+        <p class="p1">Copyright &copy; 2011 </p>
+        </div>
+    </article>
+
+{% endblock %}
