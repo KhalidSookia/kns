@@ -1,3 +1,7 @@
 app_app_homepage:
     pattern:  /
     defaults: { _controller: AppAppBundle:App:index }
+
+app_menu_homepage:
+    pattern:  /menu
+    defaults: { _controller: AppMenuBundle:Menu:menu }

@@ -1,3 +1,4 @@
+
 {% block header %}
     
 <!--==============================header=================================-->
@@ -5,7 +6,8 @@
         	<div class="row-top">
             	<div class="main">
                 	<div class="wrapper">
-                    	<h1><a href="index.html">KNS-3W</a></h1>
+                    	<!-- <i class="image_logo"><img src="{{ asset('images/logo.png') }}"></i> -->
+                        <h1 class="logo"><a href="">K<span class="logo_bg_white">N</span>S 3W</a></h1>
                         <!-- <form id="search-form" method="post" enctype="multipart/form-data">
                         <fieldset>	
                             <div class="search-field">
@@ -22,11 +24,9 @@
                     <div class="main">
                         <nav class="indent-left">
                             <ul class="menu wrapper">
-                                <li class="active"><a href="index.html">Home page</a></li>
-                                <li><a href="company.html">our Company</a></li>
-                                <li><a href="services.html">our services</a></li>
-                                <li><a href="projects.html">our projects</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                {% block menu %}
+                                    {{ render(controller("AppMenuBundle:Menu:menu")) }}
+                                {% endblock %}
                             </ul>
                         </nav>
                     </div>

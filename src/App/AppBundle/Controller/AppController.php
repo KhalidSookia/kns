@@ -14,6 +14,7 @@ class AppController extends Controller
      */
     public function indexAction()
     {
+
         return $this->render('AppAppBundle:App:index.html.twig');
     }
 }

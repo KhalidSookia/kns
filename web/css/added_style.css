@@ -1,0 +1,15 @@
+.logo a {text-decoration:none}	
+.logo {
+	/*position:relative;*/
+	/*float:left;*/
+	font-size: 25px;
+}
+.logo_bg_white{
+	color: white;
+}
+.image_logo{
+	float: left;
+	/*height: 50px;*/
+	width: 150px;
+	overflow: hidden;
+}
