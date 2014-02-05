@@ -6,7 +6,6 @@
         	<div class="row-top">
             	<div class="main">
                 	<div class="wrapper">
-                    	<!-- <i class="image_logo"><img src="{{ asset('images/logo.png') }}"></i> -->
                         <h1 class="logo"><a href="">K<span class="logo_bg_white">N</span>S 3W</a></h1>
                         <!-- <form id="search-form" method="post" enctype="multipart/form-data">
                         <fieldset>	
@@ -35,17 +34,9 @@
             <div class="row-bot">
             	<div class="center-shadow">
                 	<div class="carousel-container">
-                      <div id="carousel">
-                        <div class="carousel-feature">
-                          <a href="#"><img class="carousel-image" alt="" src="{{ asset('images/gallery-img1.png') }}"></a>                          
-                        </div>
-                        <div class="carousel-feature">
-                          <a href="#"><img class="carousel-image" alt="" src="{{ asset('images/gallery-img3.png') }}"></a>
-                        </div>
-                        <div class="carousel-feature">
-                          <a href="#"><img class="carousel-image" alt="" src="{{ asset('images/gallery-img2.png') }}"></a>
-                        </div>
-                      </div>
+                        {% block carousel %}
+                            {{ render(controller("AppCarouselBundle:Carousel:carousel")) }}
+                        {% endblock %}
     				</div>
                 </div>
             </div>

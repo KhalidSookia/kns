@@ -1,27 +1,28 @@
 <?php
 
-namespace App\MenuBundle\Controller;
+namespace App\CarouselBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use App\MenuBundle\Entity\Menu;
-use App\MenuBundle\Form\MenuType;
+use App\CarouselBundle\Entity\Carousel;
+use App\CarouselBundle\Form\CarouselType;
+use App\UploadBundle\Entity\Upload;
 
 /**
- * Menu controller.
+ * Carousel controller.
  *
- * @Route("/admin/menu")
+ * @Route("/admin/carousel")
  */
-class MenuController extends Controller
+class CarouselController extends Controller
 {
 
     /**
-     * Lists all Menu entities.
+     * Lists all Carousel entities.
      *
-     * @Route("/", name="admin_menu")
+     * @Route("/", name="admin_carousel")
      * @Method("GET")
      * @Template()
      */
@@ -29,31 +30,32 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppMenuBundle:Menu')->findAll();
+        $entities = $em->getRepository('AppCarouselBundle:Carousel')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new Menu entity.
+     * Creates a new Carousel entity.
      *
-     * @Route("/", name="admin_menu_create")
+     * @Route("/", name="admin_carousel_create")
      * @Method("POST")
-     * @Template("AppMenuBundle:Menu:new.html.twig")
+     * @Template("AppCarouselBundle:Carousel:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Menu();
+        $entity = new Carousel();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
+            $entity->getImage()->upload();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_menu_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_carousel_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +65,16 @@ class MenuController extends Controller
     }
 
     /**
-    * Creates a form to create a Menu entity.
+    * Creates a form to create a Carousel entity.
     *
-    * @param Menu $entity The entity
+    * @param Carousel $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createCreateForm(Menu $entity)
+    private function createCreateForm(Carousel $entity)
     {
-        $form = $this->createForm(new MenuType(), $entity, array(
-            'action' => $this->generateUrl('admin_menu_create'),
+        $form = $this->createForm(new CarouselType(), $entity, array(
+            'action' => $this->generateUrl('admin_carousel_create'),
             'method' => 'POST',
         ));
 
@@ -82,15 +84,15 @@ class MenuController extends Controller
     }
 
     /**
-     * Displays a form to create a new Menu entity.
+     * Displays a form to create a new Carousel entity.
      *
-     * @Route("/new", name="admin_menu_new")
+     * @Route("/new", name="admin_carousel_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Menu();
+        $entity = new Carousel();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -100,9 +102,9 @@ class MenuController extends Controller
     }
 
     /**
-     * Finds and displays a Menu entity.
+     * Finds and displays a Carousel entity.
      *
-     * @Route("/{id}", name="admin_menu_show")
+     * @Route("/{id}", name="admin_carousel_show")
      * @Method("GET")
      * @Template()
      */
@@ -110,10 +112,10 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+        $entity = $em->getRepository('AppCarouselBundle:Carousel')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Menu entity.');
+            throw $this->createNotFoundException('Unable to find Carousel entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -125,9 +127,9 @@ class MenuController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Menu entity.
+     * Displays a form to edit an existing Carousel entity.
      *
-     * @Route("/{id}/edit", name="admin_menu_edit")
+     * @Route("/{id}/edit", name="admin_carousel_edit")
      * @Method("GET")
      * @Template()
      */
@@ -135,10 +137,10 @@ class MenuController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+        $entity = $em->getRepository('AppCarouselBundle:Carousel')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Menu entity.');
+            throw $this->createNotFoundException('Unable to find Carousel entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -152,16 +154,16 @@ class MenuController extends Controller
     }
 
     /**
-    * Creates a form to edit a Menu entity.
+    * Creates a form to edit a Carousel entity.
     *
-    * @param Menu $entity The entity
+    * @param Carousel $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Menu $entity)
+    private function createEditForm(Carousel $entity)
     {
-        $form = $this->createForm(new MenuType(), $entity, array(
-            'action' => $this->generateUrl('admin_menu_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new CarouselType(), $entity, array(
+            'action' => $this->generateUrl('admin_carousel_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -170,20 +172,20 @@ class MenuController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Menu entity.
+     * Edits an existing Carousel entity.
      *
-     * @Route("/{id}", name="admin_menu_update")
+     * @Route("/{id}", name="admin_carousel_update")
      * @Method("PUT")
-     * @Template("AppMenuBundle:Menu:edit.html.twig")
+     * @Template("AppCarouselBundle:Carousel:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+        $entity = $em->getRepository('AppCarouselBundle:Carousel')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Menu entity.');
+            throw $this->createNotFoundException('Unable to find Carousel entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -193,7 +195,7 @@ class MenuController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_menu_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_carousel_edit', array('id' => $id)));
         }
 
         return array(
@@ -203,9 +205,9 @@ class MenuController extends Controller
         );
     }
     /**
-     * Deletes a Menu entity.
+     * Deletes a Carousel entity.
      *
-     * @Route("/{id}", name="admin_menu_delete")
+     * @Route("/{id}", name="admin_carousel_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -215,21 +217,21 @@ class MenuController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppMenuBundle:Menu')->find($id);
+            $entity = $em->getRepository('AppCarouselBundle:Carousel')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Menu entity.');
+                throw $this->createNotFoundException('Unable to find Carousel entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_menu'));
+        return $this->redirect($this->generateUrl('admin_carousel'));
     }
 
     /**
-     * Creates a form to delete a Menu entity by id.
+     * Creates a form to delete a Carousel entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -238,21 +240,21 @@ class MenuController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_menu_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_carousel_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
     }
 
-    public function menuAction(){
+    public function carouselAction(){
         $em = $this->getDoctrine()->getManager();
 
-        $menus = $em->getRepository('AppMenuBundle:Menu')->findBy(array('active' => '1'), array('position' => 'ASC'));
+        $carousels = $em->getRepository('AppCarouselBundle:Carousel')->findBy(array('active' => '1'));
 
-        // if($menus == null){
-        //     throw $this->createNotFoundException('Menu non trouvé !!! Contacter le webmaster à l\'adresse webmaster@kns-3w.com');
+        // if($carousels == null){
+        //     throw $this->createNotFoundException('Carousel non trouvé !!! Contacter le webmaster à l\'adresse webmaster@kns-3w.com');
         // }
-        return $this->render('AppMenuBundle:Menu:menu.html.twig', array('menus' => $menus));
+        return $this->render('AppCarouselBundle:Carousel:carousel.html.twig', array('carousels' => $carousels));
     }
 }

@@ -1,0 +1,7 @@
+parameters:
+#    app_carousel.example.class: App\CarouselBundle\Example
+
+services:
+#    app_carousel.example:
+#        class: %app_carousel.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,27 @@
+admin_carousel:
+    pattern:  admin/carousel
+    defaults: { _controller: AppCarouselBundle:Carousel:index }
+
+admin_carousel_new:
+    pattern:  admin/carousel/new
+    defaults: { _controller: AppCarouselBundle:Carousel:new }
+
+admin_carousel_create:
+    pattern:  admin/carousel/create
+    defaults: { _controller: AppCarouselBundle:Carousel:create }
+
+admin_carousel_show:
+    pattern:  admin/carousel/{id}
+    defaults: { _controller: AppCarouselBundle:Carousel:show }
+
+admin_carousel_edit:
+    pattern:  admin/carousel/{id}/edit
+    defaults: { _controller: AppCarouselBundle:Carousel:edit }
+
+admin_carousel_delete:
+    pattern:  admin/carousel/delete/{id}
+    defaults: { _controller: AppCarouselBundle:Carousel:delete }
+
+admin_carousel_update:
+    pattern:  admin/carousel/update/{id}
+    defaults: { _controller: AppCarouselBundle:Carousel:update }

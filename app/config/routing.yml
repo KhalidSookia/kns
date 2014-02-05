@@ -1,9 +1,13 @@
-app_menu:
-    resource: "@AppMenuBundle/Resources/config/routing.yml"
+app_upload:
+    resource: "@AppUploadBundle/Resources/config/routing.yml"
     prefix:   /
 
-admin_menu:
-    resource: "@AdminMenuBundle/Resources/config/routing.yml"
+app_carousel:
+    resource: "@AppCarouselBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app_menu:
+    resource: "@AppMenuBundle/Resources/config/routing.yml"
     prefix:   /
 
 app_app:
