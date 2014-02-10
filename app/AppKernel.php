@@ -21,6 +21,10 @@ class AppKernel extends Kernel
             new App\MenuBundle\AppMenuBundle(),
             new App\CarouselBundle\AppCarouselBundle(),
             new App\UploadBundle\AppUploadBundle(),
+            new App\ContactBundle\AppContactBundle(),
+            new App\PagePartsBundle\AppPagePartsBundle(),
+            new App\SubsectionBundle\AppSubsectionBundle(),
+            new App\PageBundle\AppPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,63 @@
+<?php
+
+namespace App\PagePartsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Link
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="App\PagePartsBundle\Entity\LinkRepository")
+ */
+class Link
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", length=255)
+     */
+    private $link;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     * @return Link
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string 
+     */
+    public function getLink()
+    {
+        return $this->link;
+    }
+}

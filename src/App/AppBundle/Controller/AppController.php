@@ -14,7 +14,18 @@ class AppController extends Controller
      */
     public function indexAction()
     {
+    	$em = $this->getDoctrine()->getManager();
 
-        return $this->render('AppAppBundle:App:index.html.twig');
+        $mains = $em->getRepository('AppPageBundle:Main')->findBy(array('active' => '1'));
+
+
+        if($mains == null){
+            throw $this->createNotFoundException('Mains non trouvé !!! Contacter le webmaster à l\'adresse webmaster@kns-3w.com');
+        }
+        return $this->render('AppAppBundle:App:index.html.twig', 
+        	array(
+        		'mains' => $mains,
+        		));
+
     }
 }

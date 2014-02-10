@@ -1,0 +1,57 @@
+# boxes
+admin_box1:
+    pattern:  admin/box1
+    defaults: { _controller: AppSubsectionBundle:Box1:index }
+
+admin_box1_new:
+    pattern:  admin/box1/new
+    defaults: { _controller: AppSubsectionBundle:Box1:new }
+
+admin_box1_create:
+    pattern:  admin/box1/create
+    defaults: { _controller: AppSubsectionBundle:Box1:create }
+
+admin_box1_show:
+    pattern:  admin/box1/{id}
+    defaults: { _controller: AppSubsectionBundle:Box1:show }
+
+admin_box1_edit:
+    pattern:  admin/box1/{id}/edit
+    defaults: { _controller: AppSubsectionBundle:Box1:edit }
+
+admin_box1_delete:
+    pattern:  admin/box1/delete/{id}
+    defaults: { _controller: AppSubsectionBundle:Box1:delete }
+
+admin_box1_update:
+    pattern:  admin/box1/update/{id}
+    defaults: { _controller: AppSubsectionBundle:Box1:update }
+
+
+admin_box2:
+    pattern:  admin/box2
+    defaults: { _controller: AppSubsectionBundle:Box2:index }
+
+admin_box2_new:
+    pattern:  admin/box2/new
+    defaults: { _controller: AppSubsectionBundle:Box2:new }
+
+admin_box2_create:
+    pattern:  admin/box2/create
+    defaults: { _controller: AppSubsectionBundle:Box2:create }
+
+admin_box2_show:
+    pattern:  admin/box2/{id}
+    defaults: { _controller: AppSubsectionBundle:Box2:show }
+
+admin_box2_edit:
+    pattern:  admin/box2/{id}/edit
+    defaults: { _controller: AppSubsectionBundle:Box2:edit }
+
+admin_box2_delete:
+    pattern:  admin/box2/delete/{id}
+    defaults: { _controller: AppSubsectionBundle:Box2:delete }
+
+admin_box2_update:
+    pattern:  admin/box2/update/{id}
+    defaults: { _controller: AppSubsectionBundle:Box2:update }

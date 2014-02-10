@@ -52,7 +52,7 @@ class CarouselController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
-            $entity->getImage()->upload();
+            $entity->getUpload()->upload();
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_carousel_show', array('id' => $entity->getId())));
@@ -252,9 +252,9 @@ class CarouselController extends Controller
 
         $carousels = $em->getRepository('AppCarouselBundle:Carousel')->findBy(array('active' => '1'));
 
-        // if($carousels == null){
-        //     throw $this->createNotFoundException('Carousel non trouvé !!! Contacter le webmaster à l\'adresse webmaster@kns-3w.com');
-        // }
+        if($carousels == null){
+            throw $this->createNotFoundException('Carousel non trouvé !!! Contacter le webmaster à l\'adresse webmaster@kns-3w.com');
+        }
         return $this->render('AppCarouselBundle:Carousel:carousel.html.twig', array('carousels' => $carousels));
     }
 }

@@ -1,0 +1,28 @@
+# Index page "main" -------------------------------------------
+admin_page_main:
+    pattern:  admin/page/main
+    defaults: { _controller: AppPageBundle:Main:index }
+
+admin_page_main_new:
+    pattern:  admin/page/main/new
+    defaults: { _controller: AppPageBundle:Main:new }
+
+admin_page_main_create:
+    pattern:  admin/page/main/create
+    defaults: { _controller: AppPageBundle:Main:create }
+
+admin_page_main_show:
+    pattern:  admin/page/main/{id}
+    defaults: { _controller: AppPageBundle:Main:show }
+
+admin_page_main_edit:
+    pattern:  admin/page/main/{id}/edit
+    defaults: { _controller: AppPageBundle:Main:edit }
+
+admin_page_main_delete:
+    pattern:  admin/page/main/delete/{id}
+    defaults: { _controller: AppPageBundle:Main:delete }
+
+admin_page_main_update:
+    pattern:  admin/page/main/update/{id}
+    defaults: { _controller: AppPageBundle:Main:update }

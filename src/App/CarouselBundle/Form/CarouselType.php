@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
+use App\UploadBundle\Form\UploadType;
 use App\UploadBundle\Form;
 
 class CarouselType extends AbstractType
@@ -20,7 +21,7 @@ class CarouselType extends AbstractType
         $builder
             ->add('name')
             ->add('active')
-            ->add('upload', new UploadType(), array('class' => 'App\UploadBundle\Form'))
+            ->add('upload', new UploadType())
         ;
     }
     

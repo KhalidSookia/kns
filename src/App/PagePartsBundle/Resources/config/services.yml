@@ -1,0 +1,7 @@
+parameters:
+#    app_page_parts.example.class: App\PagePartsBundle\Example
+
+services:
+#    app_page_parts.example:
+#        class: %app_page_parts.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

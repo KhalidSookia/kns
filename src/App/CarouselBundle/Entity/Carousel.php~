@@ -3,7 +3,7 @@
 namespace App\CarouselBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -30,13 +30,6 @@ class Carousel
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="position", type="integer", length=255)
-     */
-    private $position;
 
     /**
      * @var boolean
@@ -85,29 +78,6 @@ class Carousel
     }
 
     /**
-     * Set position
-     *
-     * @param integer $position
-     * @return Carousel
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return integer 
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
      * Set active
      *
      * @param boolean $active
@@ -128,5 +98,28 @@ class Carousel
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Set upload
+     *
+     * @param \App\UploadBundle\Entity\Upload $upload
+     * @return Carousel
+     */
+    public function setUpload(\App\UploadBundle\Entity\Upload $upload = null)
+    {
+        $this->upload = $upload;
+
+        return $this;
+    }
+
+    /**
+     * Get upload
+     *
+     * @return \App\UploadBundle\Entity\Upload 
+     */
+    public function getUpload()
+    {
+        return $this->upload;
     }
 }

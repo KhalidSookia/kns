@@ -1,0 +1,7 @@
+parameters:
+#    app_subsection.example.class: App\SubsectionBundle\Example
+
+services:
+#    app_subsection.example:
+#        class: %app_subsection.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

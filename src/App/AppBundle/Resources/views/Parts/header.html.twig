@@ -6,7 +6,7 @@
         	<div class="row-top">
             	<div class="main">
                 	<div class="wrapper">
-                        <h1 class="logo"><a href="">K<span class="logo_bg_white">N</span>S 3W</a></h1>
+                        <h1 class="logo"><a href="{{ path('app_app_homepage') }}">K<span class="logo_bg_white">N</span>S-3W</a></h1>
                         <!-- <form id="search-form" method="post" enctype="multipart/form-data">
                         <fieldset>	
                             <div class="search-field">
@@ -35,7 +35,6 @@
             	<div class="center-shadow">
                 	<div class="carousel-container">
                         {% block carousel %}
-                            {{ render(controller("AppCarouselBundle:Carousel:carousel")) }}
                         {% endblock %}
     				</div>
                 </div>

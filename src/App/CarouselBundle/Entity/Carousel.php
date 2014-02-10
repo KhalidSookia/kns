@@ -32,13 +32,6 @@ class Carousel
     private $name;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="position", type="integer", length=255)
-     */
-    private $position;
-
-    /**
      * @var boolean
      *
      * @ORM\Column(name="active", type="boolean")
@@ -82,29 +75,6 @@ class Carousel
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set position
-     *
-     * @param integer $position
-     * @return Carousel
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return integer 
-     */
-    public function getPosition()
-    {
-        return $this->position;
     }
 
     /**

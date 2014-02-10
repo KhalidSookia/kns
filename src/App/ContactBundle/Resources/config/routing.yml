@@ -1,0 +1,27 @@
+admin_contact_new:
+    pattern:  contact
+    defaults: { _controller: AppContactBundle:Contact:new }
+
+admin_contact:
+    pattern:  admin/contact
+    defaults: { _controller: AppContactBundle:Contact:index }
+
+admin_contact_create:
+    pattern:  admin/contact/create
+    defaults: { _controller: AppContactBundle:Contact:create }
+
+admin_contact_show:
+    pattern:  admin/contact/{id}
+    defaults: { _controller: AppContactBundle:Contact:show }
+
+admin_contact_edit:
+    pattern:  admin/contact/{id}/edit
+    defaults: { _controller: AppContactBundle:Contact:edit }
+
+admin_contact_delete:
+    pattern:  admin/contact/delete/{id}
+    defaults: { _controller: AppContactBundle:Contact:delete }
+
+admin_contact_update:
+    pattern:  admin/contact/update/{id}
+    defaults: { _controller: AppContactBundle:Contact:update }
