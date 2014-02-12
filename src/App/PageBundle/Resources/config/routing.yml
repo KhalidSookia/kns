@@ -26,3 +26,64 @@ admin_page_main_delete:
 admin_page_main_update:
     pattern:  admin/page/main/update/{id}
     defaults: { _controller: AppPageBundle:Main:update }
+
+
+# Note entreprise 'company' -----------------------------------
+admin_page_company:
+    pattern:  admin/page/company
+    defaults: { _controller: AppPageBundle:Company:index }
+
+admin_page_company_new:
+    pattern:  admin/page/company/new
+    defaults: { _controller: AppPageBundle:Company:new }
+
+admin_page_company_create:
+    pattern:  admin/page/company/create
+    defaults: { _controller: AppPageBundle:Company:create }
+
+admin_page_company_show:
+    pattern:  admin/page/company/{id}
+    defaults: { _controller: AppPageBundle:Company:show }
+
+admin_page_company_edit:
+    pattern:  admin/page/company/{id}/edit
+    defaults: { _controller: AppPageBundle:Company:edit }
+
+admin_page_company_delete:
+    pattern:  admin/page/company/delete/{id}
+    defaults: { _controller: AppPageBundle:Company:delete }
+
+admin_page_company_update:
+    pattern:  admin/page/company/update/{id}
+    defaults: { _controller: AppPageBundle:Company:update }
+
+
+
+# Nos Services 'Services' -------------------------------------
+admin_page_services:
+    pattern:  admin/page/services
+    defaults: { _controller: AppPageBundle:Services:index }
+
+admin_page_services_new:
+    pattern:  admin/page/services/new
+    defaults: { _controller: AppPageBundle:Services:new }
+
+admin_page_services_create:
+    pattern:  admin/page/services/create
+    defaults: { _controller: AppPageBundle:Services:create }
+
+admin_page_services_show:
+    pattern:  admin/page/services/{id}
+    defaults: { _controller: AppPageBundle:Services:show }
+
+admin_page_services_edit:
+    pattern:  admin/page/services/{id}/edit
+    defaults: { _controller: AppPageBundle:Services:edit }
+
+admin_page_services_delete:
+    pattern:  admin/page/services/delete/{id}
+    defaults: { _controller: AppPageBundle:Services:delete }
+
+admin_page_services_update:
+    pattern:  admin/page/services/update/{id}
+    defaults: { _controller: AppPageBundle:Services:update }

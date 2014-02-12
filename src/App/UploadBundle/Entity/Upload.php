@@ -27,7 +27,14 @@ class Upload
     /**
      * @var string
      *
-     * @ORM\Column(name="url", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="url", type="string", length=255, nullable=true)
      */
     private $url;
 
@@ -40,6 +47,29 @@ class Upload
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Upload
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**
@@ -92,6 +122,10 @@ class Upload
         $this->url = $upload_name.'.'.$this->file->guessExtension();
     }
 
+    /**
+    * @ORM\PostPersist()
+    * @ORM\PostUpdate()
+    */
     public function upload(){
         if(null === $this->file){
             return;

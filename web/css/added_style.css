@@ -14,6 +14,74 @@
 	overflow: hidden;
 }
 
+/*------------------------------------Submit button -----------------*/
+
+button[type=submit]{
+	-moz-box-shadow:inset 0px 0px 0px -1px #cae3fc;
+	-webkit-box-shadow:inset 0px 0px 0px -1px #cae3fc;
+	box-shadow:inset 0px 0px 0px -1px #cae3fc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+	background-color:#79bbff;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0px;
+	border:2px solid #469df5;
+	display:inline-block;
+	color:#fff0ff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:22px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:2px 2px 1px #287ace;
+	float: right;
+}
+.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+	background-color:#4197ee;
+}.classname:active {
+	position:relative;
+	top:1px;
+}
+
+
+/*------------------------------------Carousel img-------------------*/
+.carousel-feature img{
+	width: 411px;
+	height: 449px;
+	overflow: hidden;
+}
+/*------------------------------------frontbox img-------------------*/
+.img-indent2 img{
+	width: 84px;
+	height: 92px;
+	overflow: hidden;
+}
+/*------------------------------------sidebox img-------------------*/
+.img-indent img{
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+}
+
 /*------------------------------------Contact Form-------------------*/
 #contact-form {width:580px}
 #contact-form label {
@@ -46,8 +114,6 @@
 	background:url(../images/text-area-tail.gif) 0 0 repeat-x #e5e5e5;
 	outline:none;
 }
-.buttons {padding-top:17px; text-align:right}
-.buttons a {margin-left:30px}
 
 #contact-form2 {
 	display:block;
@@ -162,4 +228,24 @@
 .subtitle3 input {
 	display:block;
 	color:#929292;
+}
+
+/*----------------------Company Page -------------------------------*/
+.company_frontbox{
+	width: 260px;
+	height: 120px;
+}
+/*----------------------Services Page ------------------------------*/
+.services_frontbox{
+	display: block;
+	clear: both;
+	overflow: hidden;
+}
+.services_frontbox img{
+	width: 93px;
+	height: 86px;
+}
+.bottombox1 img{
+	width: 220px;
+	height: 148px;
 }

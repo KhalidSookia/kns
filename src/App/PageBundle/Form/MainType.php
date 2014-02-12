@@ -29,6 +29,7 @@ class MainType extends AbstractType
             ->add('sidebox1', new Box2Type())
             ->add('sidebox2', new Box2Type())
             ->add('sidebox3', new Box2Type())
+            ->add('active', 'checkbox', array('required'    => false,))
         ;
     }
     

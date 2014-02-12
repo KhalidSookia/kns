@@ -15,7 +15,7 @@ class TextType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('text', 'text', array('attr' => array('placeholder' => 'Textarea')))
+            ->add('text', 'textarea', array('attr' => array('placeholder' => 'Textarea')))
         ;
     }
     

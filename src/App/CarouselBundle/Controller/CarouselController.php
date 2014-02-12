@@ -52,7 +52,6 @@ class CarouselController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
-            $entity->getUpload()->upload();
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_carousel_show', array('id' => $entity->getId())));

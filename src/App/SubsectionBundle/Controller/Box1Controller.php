@@ -51,7 +51,6 @@ class Box1Controller extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
-            $entity->getUpload()->upload();
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_box1_show', array('id' => $entity->getId())));
@@ -191,7 +190,9 @@ class Box1Controller extends Controller
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
+
         if ($editForm->isValid()) {
+            $em->persist($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_box1_edit', array('id' => $id)));

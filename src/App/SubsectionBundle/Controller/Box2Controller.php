@@ -51,7 +51,6 @@ class Box2Controller extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
-            $entity->getUpload()->upload();
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_box2_show', array('id' => $entity->getId())));

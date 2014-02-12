@@ -16,6 +16,7 @@ class UploadType extends AbstractType
     {
         $builder
             ->add('file', 'file')
+            ->add('name', 'text', array('attr' => array('placeholder' => 'Upload Name')))
         ;
     }
     

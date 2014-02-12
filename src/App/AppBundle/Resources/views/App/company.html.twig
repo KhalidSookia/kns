@@ -1,0 +1,274 @@
+{% extends "AppAppBundle::layout.html.twig" %}
+
+{% block body %}
+        
+        <!--==============================content================================-->
+        <section id="content">
+            <div class="content-bg">
+                <div class="main">
+                    <div class="zerogrid">
+                        <div class="wrapper">
+                            <article class="col-1-3">
+								<div class="wrap-col">
+                                <h3>
+	                                {% block title2 %}
+	                                    {% for company in companies %}
+                                            {{ company.title2.titre }}   
+                                        {% endfor %}
+	                                {% endblock %}
+                                </h3>
+                                <div class="wrapper indent-bot2">
+                                    <figure class="img-indent">
+                                    	{% block sidebox1_upload %}
+                                            {% for company in companies %}
+	                                    	    <a href=" {{path('app_app_homepage')}}{{ company.sidebox1.link.link }}">
+                                                    <img class="img-border" src="{{ asset('uploads/') }}{{ company.sidebox1.upload.url }}" alt="{{ company.sidebox1.upload.name }}" />
+                                                </a>
+                                            {% endfor %}
+                                    	{% endblock %}
+                                    </figure>
+                                    <div class="extra-wrap">
+                                        <span class="text-2">
+                                        	{% block sidebox1_subtitle3 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox1.subtitle3.subtitle3 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </span>
+                                        <h4 class="p1">
+                                        	{% block sidebox1_subtitle1 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox1.subtitle1.subtitle1 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </h4>
+                                        {% block sidebox1_short %}
+                                            {% for company in companies %}
+                                                {{ company.sidebox1.short.short }}   
+                                            {% endfor %}
+                                        {% endblock %}
+                                        <div>
+                                        	{% block sidebox1_link %}
+                                        	{% endblock %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrapper indent-bot2">
+                                    <figure class="img-indent">
+                                    	{% block sidebox2_upload %}
+                                            {% for company in companies %}
+                                                <a href=" {{path('app_app_homepage')}}{{ company.sidebox2.link.link }}">
+                                                    <img class="img-border" src="{{ asset('uploads/') }}{{ company.sidebox2.upload.url }}" alt="{{ company.sidebox2.upload.name }}" />
+                                                </a>
+                                            {% endfor %}
+                                    	{% endblock %}
+                                    </figure>
+                                    <div class="extra-wrap">
+                                        <span class="text-2">
+                                        	{% block sidebox2_subtitle3 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox2.subtitle3.subtitle3 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </span>
+                                        <h4 class="p1">
+                                        	{% block sidebox2_subtitle1 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox2.subtitle1.subtitle1 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </h4>
+                                        {% block sidebox2_short %}
+                                            {% for company in companies %}
+                                                {{ company.sidebox2.short.short }}   
+                                            {% endfor %}
+                                        {% endblock %}
+                                        <div>
+                                        	{% block sidebox2_link %}
+                                        	{% endblock %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrapper indent-bot2">
+                                    <figure class="img-indent">
+                                    	{% block sidebox3_upload %}
+                                            {% for company in companies %}
+                                                <a href=" {{path('app_app_homepage')}}{{ company.sidebox3.link.link }}">
+                                                    <img class="img-border" src="{{ asset('uploads/') }}{{ company.sidebox3.upload.url }}" alt="{{ company.sidebox3.upload.name }}" />
+                                                </a>
+                                            {% endfor %}
+                                    	{% endblock %}
+                                    </figure>
+                                    <div class="extra-wrap">
+                                        <span class="text-2">
+                                        	{% block sidebox3_subtitle3 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox3.subtitle1.subtitle1 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </span>
+                                        <h4 class="p1">
+                                        	{% block sidebox3_subtitle1 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox3.subtitle1.subtitle1 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </h4>
+                                        {% block sidebox3_short %}
+                                            {% for company in companies %}
+                                                {{ company.sidebox3.short.short }}   
+                                            {% endfor %}
+                                        {% endblock %}
+                                        <div>
+                                        	{% block sidebox3_link %}
+                                        	{% endblock %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wrapper indent-bot2">
+                                    <figure class="img-indent">
+                                    	{% block sidebox4_upload %}
+                                            {% for company in companies %}
+                                                <a href=" {{path('app_app_homepage')}}{{ company.sidebox4.link.link }}">
+                                                    <img class="img-border" src="{{ asset('uploads/') }}{{ company.sidebox4.upload.url }}" alt="{{ company.sidebox4.upload.name }}" />
+                                                </a>
+                                            {% endfor %}
+                                    	{% endblock %}
+                                    </figure>
+                                    <div class="extra-wrap">
+                                        <span class="text-2">
+                                        	{% block sidebox4_subtitle3 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox4.subtitle1.subtitle1 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </span>
+                                        <h4 class="p1">
+                                        	{% block sidebox4_subtitle1 %}
+                                                {% for company in companies %}
+                                                    {{ company.sidebox4.subtitle1.subtitle1 }}   
+                                                {% endfor %}
+                                        	{% endblock %}
+                                        </h4>
+                                        {% block sidebox4_short %}
+                                            {% for company in companies %}
+                                                {{ company.sidebox4.short.short }}   
+                                            {% endfor %}
+                                        {% endblock %}
+                                        <div>
+                                        	{% block sidebox4_link %}
+                                        	{% endblock %}
+                                        </div>
+                                    </div>
+                                </div>
+								</div>
+                            </article>
+                            <article class="col-2-3">
+								<div class="wrap-col">
+                            	<div>
+                                	<h3>
+                                		{% block title1 %}
+                                        {% for company in companies %}
+                                            {{ company.title1.titre }}   
+                                        {% endfor %}
+                                		{% endblock %}
+                                	</h3>
+                                </div>
+                                <div class="wrapper indent-bot">
+                                	<article class="col-1-2">
+										<div class="wrap-col">                                   	
+                                            <figure class="p2">
+                                            	{% block frontBox1_upload %}
+                                                    {% for company in companies %}
+                                                        <img class="img-border company_frontbox" src="{{ asset('uploads/') }}{{ company.frontBox1.upload.url }}" alt="{{ company.frontBox1.upload.name }}" />
+                                                    {% endfor %}
+                                            	{% endblock %}
+                                            </figure>
+                                            <h4 class="p1">
+                                            	{% block frontBox1_subtitle1 %}
+                                                    {% for company in companies %}
+                                                        {{ company.frontBox1.subtitle1.subtitle1 }}   
+                                                    {% endfor %}
+                                            	{% endblock %}
+                                            </h4>
+                                            {% block frontBox1_text %}
+                                                {% for company in companies %}
+                                                    {{ company.frontBox1.text.text }}   
+                                                {% endfor %}
+                                            {% endblock %}
+										</div>
+                                    </article>
+                                    <article class="col-1-2">
+										<div class="wrap-col">
+                                            <figure class="p2">
+                                            	{% block frontBox2_upload %}
+                                                    {% for company in companies %}
+                                                        <img class="img-border company_frontbox" src="{{ asset('uploads/') }}{{ company.frontBox2.upload.url }}" alt="{{ company.frontBox2.upload.name }}" />
+                                                    {% endfor %}
+                                            	{% endblock %}
+                                            </figure>
+                                            <h4 class="p1">
+                                            	{% block frontBox2_subtitle1 %}
+                                                    {% for company in companies %}
+                                                        {{ company.frontBox2.subtitle1.subtitle1 }}   
+                                                    {% endfor %}
+                                            	{% endblock %}
+                                            </h4>
+                                            {% block frontBox2_text %}
+                                                {% for company in companies %}
+                                                    {{ company.frontBox2.text.text }}   
+                                                {% endfor %}
+                                            {% endblock %}
+										</div>
+                                    </article>
+                                </div>
+                                <div>
+                                	<h3>
+                                		{% block bottombox_title %}
+                                            {% for company in companies %}
+                                                {{ company.bottombox.title.titre }}   
+                                            {% endfor %}
+                                		{% endblock %}
+                                	</h3>
+                                    <p>
+                                    	{% block bottombox_text %}
+                                            {% for company in companies %}
+                                                {{ company.bottombox.text.text  }}   
+                                            {% endfor %}
+                                    	{% endblock %}
+                                    </p>
+                                </div>
+                                <div class="wrapper">
+
+                                {% block name %}
+                                    
+                                {% endblock %}
+
+                                <!-- 
+                                	<article class="col-1-2">
+										<div class="wrap-col">                            	
+                                        	<ul class="list-1">
+                                            	<li><a href="#">At vero eos et accusamus et iusto</a></li>
+                                                <li><a href="#">Dignissimos ducimus qui blanditiis</a></li>
+                                            </ul>
+										</div>
+                                    </article>
+                                    <article class="col-1-2">
+										<div class="wrap-col">
+                                        	<ul class="list-1">
+                                            	<li><a href="#">At vero eos et accusamus et iusto</a></li>
+                                                <li><a href="#">Dignissimos ducimus qui blanditiis</a></li>
+                                            </ul>
+										</div>
+                                    </article> -->
+                                </div>
+								</div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="block"></div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

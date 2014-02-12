@@ -20,7 +20,7 @@ class CarouselType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('active')
+            ->add('active', 'checkbox', array('required'    => false,))
             ->add('upload', new UploadType())
         ;
     }

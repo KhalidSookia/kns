@@ -13,8 +13,8 @@
                                 <input name="search" type="text" value="Search..." onBlur="if(this.value=='') this.value='Search...'" onFocus="if(this.value =='Search...' ) this.value=''" />
                                 <a class="search-button" href="#" onClick="document.getElementById('search-form').submit()"></a>    
                             </div>                      
-                        </fieldset> -->
-                    </form>
+                        </fieldset>
+                    </form> -->
                     </div>
                 </div>
             </div>
@@ -44,6 +44,12 @@
 
 {% endblock %}
 
+
+{% block page_section %}
+    <body id="page1">
+        <div class="extra">    
+{% endblock %}
+
 {% block body %}
     
         <!--==============================content================================-->
@@ -54,21 +60,19 @@
                     <div class="wrapper row">
                         <article class="col-2-3">
                             <div class="wrap-col">
-                            {% block start_form %}{% endblock %}
                         	<h3>{% block title1 %}
-                                {% if mains %}
+                                    {% block main_active %}
+                                        
+                                    {% endblock %}
                                     {% for main in mains %}
                                         {{ main.title1.titre}}
                                     {% endfor %}
-                                {% endif %}
                             {% endblock %}</h3>
                             <em class="text-1 margin-bot">
                             {% block various %}
-                                {% if mains %}
                                 {% for main in mains %}
                                     {{ main.various.short }}
                                 {% endfor %}
-                                {% endif %}
                             {% endblock %}
                             </em>
                             <div class="wrapper p4">
@@ -77,29 +81,25 @@
                                 	<div class="wrapper p1">
                                     	<figure class="img-indent2">
                                             {% block frontBox1_upload %}
-                                {% if mains %}
                                                 {% for main in mains %}
-                                                <img src="{{ asset('uploads/') }}{{ main.frontBox1.upload.url }}" alt="" />
+                                                <img src="{{ asset('uploads/') }}{{ main.frontBox1.upload.url }}" alt="{{ main.frontBox1.upload.name }}" />
                                                 {% endfor %}
-                                {% endif %}
                                             {% endblock %}
                                         </figure>
                                         <div class="extra-wrap">
                                         	<div class="indent-top">
                                             	<h4>
                                                     {% block frontBox1_subtitle1 %}
-                                {% if mains %}
                                                         {% for main in mains %}
                                                             {{ main.frontbox1.subtitle1.subtitle1 }}
                                                         {% endfor %}
-                                {% endif %}
                                                     {% endblock %}
                                                     <em>
-                                {% if mains %}
+                                                    {% block frontBox1_subtitle2 %}
                                                         {% for main in mains %}
-                                                            {% block frontBox1_subtitle2 %}{{ main.frontbox1.subtitle2.subtitle2 }}{% endblock %}
+                                                            {{ main.frontbox1.subtitle2.subtitle2 }}
                                                         {% endfor %}
-                                {% endif %}
+                                                    {% endblock %}
                                                     </em>
                                                 </h4>
                                             </div>
@@ -107,19 +107,15 @@
                                     </div>
                                     <p class="prev-indent-bot">
                                         {% block frontBox1_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.frontbox1.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block frontBox1_link %}
-                                {% if mains %}
                                         {% for main in mains %}
-                                        <a class="link-1" href="">Voir Plus</a>
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.frontBox1.link.link }}">Voir Plus</a>
                                         {% endfor %}
-                                {% endif %}
                                     {% endblock %}
                                     
 									</div>
@@ -129,30 +125,24 @@
                                 	<div class="wrapper p1">
                                     	<figure class="img-indent2">
                                         {% block frontBox2_upload %}
-                                {% if mains %}
                                             {% for main in mains %}
-                                                <img src="{{ asset('uploads/') }}{{ main.frontBox2.upload.url }}" alt="" />
+                                                <img src="{{ asset('uploads/') }}{{ main.frontBox2.upload.url }}" alt="{{ main.frontBox2.upload.name }}" />
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                         </figure>
                                         <div class="extra-wrap">
                                         	<div class="indent-top">
                                             	<h4>
                                                     {% block frontBox2_subtitle1 %}
-                                {% if mains %}
                                                         {% for main in mains %}
                                                             {{ main.frontbox2.subtitle1.subtitle1 }}
                                                         {% endfor %}
-                                {% endif %}
                                                     {% endblock %}
                                                     <em>
                                                         {% block frontBox2_subtitle2 %}
-                                {% if mains %}
                                                             {% for main in mains %}
                                                                 {{ main.frontbox2.subtitle2.subtitle2 }}
                                                             {% endfor %}
-                                {% endif %}
                                                         {% endblock %}
                                                     </em>
                                                 </h4>
@@ -161,19 +151,15 @@
                                     </div>
                                     <p class="prev-indent-bot">
                                         {% block frontBox2_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.frontbox2.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block frontBox2_link %}
-                                {% if mains %}
                                         {% for main in mains %}
-                                            <a class="link-1" href="">Voir Plus</a>
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.frontBox2.link.link }}">Voir Plus</a>
                                         {% endfor %}
-                                {% endif %}
                                     {% endblock %}
 									</div>
                                 </article>
@@ -184,30 +170,24 @@
                                 	<div class="wrapper p1">
                                     	<figure class="img-indent2">
                                             {% block frontBox3_upload %}    
-                                {% if mains %}
                                                 {% for main in mains %}
-                                                    <img src="{{ asset('uploads/') }}{{ main.frontBox3.upload.url }}" alt="" />
+                                                    <img src="{{ asset('uploads/') }}{{ main.frontBox3.upload.url }}" alt="{{ main.frontBox3.upload.name }}" />
                                                 {% endfor %}
-                                {% endif %}
                                             {% endblock %}
                                         </figure>
                                         <div class="extra-wrap">
                                         	<div class="indent-top">
                                             	<h4>
                                                     {% block frontBox3_subtitle1 %}
-                                {% if mains %}
                                                         {% for main in mains %}
                                                             {{ main.frontbox3.subtitle1.subtitle1 }}
                                                         {% endfor %}
-                                {% endif %}
                                                     {% endblock %}
                                                     <em>
                                                         {% block frontBox3_subtitle2 %}
-                                {% if mains %}
                                                             {% for main in mains %}
                                                                 {{ main.frontbox3.subtitle2.subtitle2 }}
                                                             {% endfor %}
-                                {% endif %}
                                                         {% endblock %}
                                                     </em>
                                                 </h4>
@@ -216,19 +196,15 @@
                                     </div>
                                     <p class="prev-indent-bot">
                                         {% block frontBox3_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.frontbox3.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block frontBox3_link %}
-                                {% if mains %}
                                         {% for main in mains %}
-                                            <a class="link-1" href="">Voir Plus</a>
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.frontBox3.link.link }}">Voir Plus</a>
                                         {% endfor %}
-                                {% endif %}
                                     {% endblock %}
 									</div>
                                 </article>
@@ -237,30 +213,24 @@
                                 	<div class="wrapper p1">
                                     	<figure class="img-indent2">
                                             {% block frontBox4_upload %}    
-                                {% if mains %}
                                                 {% for main in mains %}
-                                                    <img src="{{ asset('uploads/') }}{{ main.frontBox4.upload.url }}" alt="" />
+                                                    <img src="{{ asset('uploads/') }}{{ main.frontBox4.upload.url }}" alt="{{ main.frontBox4.upload.name }}" />
                                                 {% endfor %}
-                                {% endif %}
                                             {% endblock %}
                                         </figure>
                                         <div class="extra-wrap">
                                         	<div class="indent-top">
                                             	<h4>
                                                     {% block frontBox4_subtitle1 %}
-                                {% if mains %}
                                                         {% for main in mains %}
                                                             {{ main.frontbox4.subtitle1.subtitle1 }}
                                                         {% endfor %}
-                                {% endif %}
                                                     {% endblock %}
                                                     <em>
                                                         {% block frontBox4_subtitle2 %}
-                                {% if mains %}
                                                             {% for main in mains %}
                                                                 {{ main.frontbox4.subtitle2.subtitle2 }}
                                                             {% endfor %}
-                                {% endif %}
                                                         {% endblock %}
                                                     </em>
                                             </div>
@@ -268,19 +238,15 @@
                                     </div>
                                     <p class="prev-indent-bot">
                                         {% block frontBox4_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.frontbox4.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block frontBox4_link %}
-                                {% if mains %}
                                         {% for main in mains %}
-                                            <a class="link-1" href="">Voir Plus</a>
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.frontBox4.link.link }}">Voir Plus</a>
                                         {% endfor %}
-                                {% endif %}
                                     {% endblock %}
 									</div>
                                 </article>
@@ -291,152 +257,128 @@
 							<div class="wrap-col">
                         	<h3>
                             {% block title2 %}
-                                {% if mains %}
                                 {% for main in mains %}
                                     {{ main.title2.titre}}
                                 {% endfor %}
-                                {% endif %}
                             {% endblock %}
                             </h3>
                             <div class="wrapper p3">
                             	<figure class="img-indent">
-                                    <a href="#">
                                         {% block sidebox1_upload %}    
-                                {% if mains %}
                                             {% for main in mains %}
-                                                <img src="{{ asset('uploads/') }}{{ main.sidebox1.upload.url }}" alt="" />
+                                                <a href="{{ path('app_app_homepage') }}{{ main.sidebox1.link.link }}">
+                                                    <img src="{{ asset('uploads/') }}{{ main.sidebox1.upload.url }}" alt="{{ main.sidebox1.upload.name }}" />
+                                                </a>
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
-                                    </a>
                                 </figure>
                                 <div class="extra-wrap">
                                 	<span class="text-2">
                                         {% block sidebox1_subtitle3 %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox1.subtitle3.subtitle3 }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </span>
                                     <h4 class="p2">
                                         {% block sidebox1_subtitle1 %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox1.subtitle1.subtitle1 }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </h4>
                                     <p class="prev-indent-bot">
                                         {% block sidebox1_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox1.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block sidebox1_link %}
-                                        <a class="link-1" href="">Voir Plus</a>
+                                        {% for main in mains %}
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.sidebox1.link.link }}">Voir Plus</a>
+                                        {% endfor %}
                                     {% endblock %}
                                 </div>
                             </div>
                             <div class="wrapper p3">
                             	<figure class="img-indent">
-                                    <a href="#">
                                         {% block sidebox2_upload %}  
-                                {% if mains %}
                                             {% for main in mains %}
-                                                <img src="{{ asset('uploads/') }}{{ main.sidebox2.upload.url }}" alt="" />
+                                                <a href="{{ path('app_app_homepage') }}{{ main.sidebox2.link.link }}">
+                                                    <img src="{{ asset('uploads/') }}{{ main.sidebox2.upload.url }}" alt="{{ main.sidebox2.upload.name }}" />
+                                                </a>
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
-                                    </a>
                                 </figure>
                                 <div class="extra-wrap">
                                 	<span class="text-2">
                                         {% block sidebox2_subtitle3 %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox2.subtitle3.subtitle3 }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </span>
                                     <h4 class="p1">
                                         {% block sidebox2_subtitle1 %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox2.subtitle1.subtitle1 }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </h4>
                                     <p class="prev-indent-bot">
                                         {% block sidebox2_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox2.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block sidebox2_link %}
-                                        <a class="link-1" href="">Voir Plus</a>
+                                        {% for main in mains %}
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.sidebox2.link.link }}">Voir Plus</a>
+                                        {% endfor %}
                                     {% endblock %}
                                 </div>
                             </div>
                             <div class="wrapper">
                             	<figure class="img-indent">
-                                    <a href="#">
                                         {% block sidebox3_upload %}  
-                                {% if mains %}
                                             {% for main in mains %}
-                                                <img src="{{ asset('uploads/') }}{{ main.sidebox3.upload.url }}" alt="" />
+                                                <a href="{{ path('app_app_homepage') }}{{ main.sidebox3.link.link }}">
+                                                    <img src="{{ asset('uploads/') }}{{ main.sidebox3.upload.url }}" alt="{{ main.sidebox3.upload.name }}" />
+                                                </a>
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
-                                    </a>
                                 </figure>
                                 <div class="extra-wrap">
                                 	<span class="text-2">
                                         {% block sidebox3_subtitle3 %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox3.subtitle3.subtitle3 }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </span>
                                     <h4 class="prev-indent-bot">
                                         {% block sidebox3_subtitle1 %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox3.subtitle1.subtitle1 }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </h4>
                                     <p class="prev-indent-bot">
                                         {% block sidebox3_short %}
-                                {% if mains %}
                                             {% for main in mains %}
                                                 {{ main.sidebox3.short.short }}
                                             {% endfor %}
-                                {% endif %}
                                         {% endblock %}
                                     </p>
                                     {% block sidebox3_link %}
-                                        <a class="link-1" href="">Voir Plus</a>
+                                        {% for main in mains %}
+                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.sidebox3.link.link }}">Voir Plus</a>
+                                        {% endfor %}
                                     {% endblock %}
                                 </div>
                             </div>
-
-                            {% block end_form %}
-                                
-                            {% endblock %}
 							</div>
                         </article>
                     </div>
@@ -444,4 +386,5 @@
             </div>
             <div class="block"></div>
         </section>
+    </div>
 {% endblock %}

@@ -1,13 +1,9 @@
 {% extends 'AppAppBundle:App:index.html.twig' %}
 
 
-    {% block form_start %}
-        {{ form_start(form) }}
-    {% endblock %}
-
-
 
     {% block title1 %}
+        {{ form_start(form) }}
         {{form_widget(form.title1, {'attr': {'class' : 'admin_create_update_form title'}}) }}
     {% endblock %}
 
@@ -169,11 +165,14 @@
         {{form_widget(form.sidebox3.short, {'attr': {'class' : 'admin_create_update_form prev-indent-bot'}}) }}
     {% endblock %}
 
-    {% block sidebox3_link %}
-        {{form_widget(form.sidebox3.link, {'attr': {'class' : 'admin_create_update_form'}}) }}
+    {% block main_active %}
+        {{form_widget(form.active, {'attr': {'class' : 'admin_create_update_form prev-indent-bot'}}) }}
     {% endblock %}
 
-
-    {% block form_end %}
+    {% block sidebox3_link %}
+        {{form_widget(form.sidebox3.link, {'attr': {'class' : 'admin_create_update_form'}}) }}
         {{ form_end(form) }}
+    {% endblock %}
+
+    {% block submit_btn %}
     {% endblock %}

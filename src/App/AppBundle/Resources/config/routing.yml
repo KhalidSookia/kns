@@ -2,6 +2,10 @@ app_app_homepage:
     pattern:  /
     defaults: { _controller: AppAppBundle:App:index }
 
-app_menu_homepage:
-    pattern:  /menu
-    defaults: { _controller: AppMenuBundle:Menu:menu }
+app_app_company:
+    pattern:  /company
+    defaults: { _controller: AppAppBundle:App:company }
+
+app_app_services:
+    pattern:  /services
+    defaults: { _controller: AppAppBundle:App:services }

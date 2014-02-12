@@ -16,8 +16,8 @@ class MenuType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('path')
-            ->add('active')
+            ->add('path', 'text', array('required'    => false,))
+            ->add('active', 'checkbox', array('required'    => false,))
             ->add('position')
         ;
     }

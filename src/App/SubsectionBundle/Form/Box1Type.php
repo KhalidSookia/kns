@@ -26,7 +26,7 @@ class Box1Type extends AbstractType
             ->add('subtitle2', new Subtitle2Type())
             ->add('short', new ShortType())
             ->add('link', new LinkType())
-            ->add('upload', new UploadType())
+            ->add('upload', new UploadType(), array('required' => false))
         ;
     }
     

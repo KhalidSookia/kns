@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use App\PageBundle\Entity\Main;
 use App\PageBundle\Form\MainType;
+use App\UploadBundle\Entity\Upload;
 
 /**
  * Main controller.
