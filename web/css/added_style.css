@@ -249,3 +249,28 @@ button[type=submit]{
 	width: 220px;
 	height: 148px;
 }
+/*----------------------Page Created -------------------------------*/
+
+.page img{
+	width: 960px;
+	height: 150px;
+	margin: 5px 0 25px 0;
+}
+
+.right_column{
+	float: right;
+	width: 250px;
+}
+.page_main_text{
+	margin-top: 20px;
+}
+/*----------------------Facebook and Twitter Buttons ---------------*/
+
+.border-bot li{
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.pluginConnectButton{
+	line-height: 26px;
+}

@@ -1,27 +1,27 @@
 <?php
 
-namespace App\SubsectionBundle\Controller;
+namespace App\PageBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use App\SubsectionBundle\Entity\Box1;
-use App\SubsectionBundle\Form\Box1Type;
+use App\PageBundle\Entity\Page;
+use App\PageBundle\Form\PageType;
 
 /**
- * Box1 controller.
+ * Page controller.
  *
- * @Route("/admin/box1")
+ * @Route("/admin/page/page")
  */
-class Box1Controller extends Controller
+class PageController extends Controller
 {
 
     /**
-     * Lists all Box1 entities.
+     * Lists all Page entities.
      *
-     * @Route("/", name="admin_box1")
+     * @Route("/", name="admin_page_page")
      * @Method("GET")
      * @Template()
      */
@@ -29,22 +29,22 @@ class Box1Controller extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppSubsectionBundle:Box1')->findAll();
+        $entities = $em->getRepository('AppPageBundle:Page')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new Box1 entity.
+     * Creates a new Page entity.
      *
-     * @Route("/", name="admin_box1_create")
+     * @Route("/", name="admin_page_page_create")
      * @Method("POST")
-     * @Template("AppSubsectionBundle:Box1:new.html.twig")
+     * @Template("AppPageBundle:Page:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Box1();
+        $entity = new Page();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -53,7 +53,7 @@ class Box1Controller extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_box1_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_page_page_show', array('id' => $entity->getId())));
         }
 
         return array(
@@ -63,16 +63,16 @@ class Box1Controller extends Controller
     }
 
     /**
-    * Creates a form to create a Box1 entity.
+    * Creates a form to create a Page entity.
     *
-    * @param Box1 $entity The entity
+    * @param Page $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createCreateForm(Box1 $entity)
+    private function createCreateForm(Page $entity)
     {
-        $form = $this->createForm(new Box1Type(), $entity, array(
-            'action' => $this->generateUrl('admin_box1_create'),
+        $form = $this->createForm(new PageType(), $entity, array(
+            'action' => $this->generateUrl('admin_page_page_create'),
             'method' => 'POST',
         ));
 
@@ -82,15 +82,15 @@ class Box1Controller extends Controller
     }
 
     /**
-     * Displays a form to create a new Box1 entity.
+     * Displays a form to create a new Page entity.
      *
-     * @Route("/new", name="admin_box1_new")
+     * @Route("/new", name="admin_page_page_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Box1();
+        $entity = new Page();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -100,9 +100,9 @@ class Box1Controller extends Controller
     }
 
     /**
-     * Finds and displays a Box1 entity.
+     * Finds and displays a Page entity.
      *
-     * @Route("/{id}", name="admin_box1_show")
+     * @Route("/{id}", name="admin_page_page_show")
      * @Method("GET")
      * @Template()
      */
@@ -110,10 +110,10 @@ class Box1Controller extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppSubsectionBundle:Box1')->find($id);
+        $entity = $em->getRepository('AppPageBundle:Page')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Box1 entity.');
+            throw $this->createNotFoundException('Unable to find Page entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -125,9 +125,9 @@ class Box1Controller extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Box1 entity.
+     * Displays a form to edit an existing Page entity.
      *
-     * @Route("/{id}/edit", name="admin_box1_edit")
+     * @Route("/{id}/edit", name="admin_page_page_edit")
      * @Method("GET")
      * @Template()
      */
@@ -135,10 +135,10 @@ class Box1Controller extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppSubsectionBundle:Box1')->find($id);
+        $entity = $em->getRepository('AppPageBundle:Page')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Box1 entity.');
+            throw $this->createNotFoundException('Unable to find Page entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -152,16 +152,16 @@ class Box1Controller extends Controller
     }
 
     /**
-    * Creates a form to edit a Box1 entity.
+    * Creates a form to edit a Page entity.
     *
-    * @param Box1 $entity The entity
+    * @param Page $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Box1 $entity)
+    private function createEditForm(Page $entity)
     {
-        $form = $this->createForm(new Box1Type(), $entity, array(
-            'action' => $this->generateUrl('admin_box1_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new PageType(), $entity, array(
+            'action' => $this->generateUrl('admin_page_page_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -170,31 +170,30 @@ class Box1Controller extends Controller
         return $form;
     }
     /**
-     * Edits an existing Box1 entity.
+     * Edits an existing Page entity.
      *
-     * @Route("/{id}", name="admin_box1_update")
+     * @Route("/{id}", name="admin_page_page_update")
      * @Method("PUT")
-     * @Template("AppSubsectionBundle:Box1:edit.html.twig")
+     * @Template("AppPageBundle:Page:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppSubsectionBundle:Box1')->find($id);
+        $entity = $em->getRepository('AppPageBundle:Page')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Box1 entity.');
+            throw $this->createNotFoundException('Unable to find Page entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
         $editForm = $this->createEditForm($entity);
         $editForm->handleRequest($request);
 
-
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_box1_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_page_page_edit', array('id' => $id)));
         }
 
         return array(
@@ -204,9 +203,9 @@ class Box1Controller extends Controller
         );
     }
     /**
-     * Deletes a Box1 entity.
+     * Deletes a Page entity.
      *
-     * @Route("/{id}", name="admin_box1_delete")
+     * @Route("/{id}", name="admin_page_page_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -216,21 +215,21 @@ class Box1Controller extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppSubsectionBundle:Box1')->find($id);
+            $entity = $em->getRepository('AppPageBundle:Page')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Box1 entity.');
+                throw $this->createNotFoundException('Unable to find Page entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('admin_box1'));
+        return $this->redirect($this->generateUrl('admin_page_page'));
     }
 
     /**
-     * Creates a form to delete a Box1 entity by id.
+     * Creates a form to delete a Page entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -239,7 +238,7 @@ class Box1Controller extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_box1_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('admin_page_page_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()

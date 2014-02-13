@@ -58,13 +58,13 @@ class AppController extends Controller
     public function pageAction($slug){
         $em = $this->getDoctrine()->getManager();
 
-        $product = $em->getRepository('AppProductBundle:Product')->findBy(
+        $pages = $em->getRepository('AppPageBundle:Page')->findBy(
             array('active' => true, 'slug' => $slug));
 
-        if (!$product) {
+        if (!$pages) {
             throw $this->createNotFoundException('Unable to find Product product.');
         }
 
-        return $this->render('AppAppBundle:Product:index.html.twig', array('products' => $product));
+        return $this->render('AppAppBundle:App:page.html.twig', array('pages' => $pages));
     }
 }

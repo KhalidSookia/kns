@@ -1,1 +1,52 @@
 {% extends "AppAppBundle::layout.html.twig" %}
+
+{% block body %}
+        
+        <!--==============================content================================-->
+        <section id="content">
+            <div class="content-bg">
+                <div class="main">
+                    <div class="zerogrid">
+                        <div class="wrapper">
+                            <div class="page">
+                        		<h3>
+                        		{% for page in pages %}
+                        		    {{ page.name }}
+                        		{% endfor %}
+                        		</h3>
+                        		{% for page in pages %}
+                        		    <img src="{{ asset('uploads/') }}{{ page.main.upload.url }}">
+                        		{% endfor %}
+                        		<div class="right_column">
+                        			<div class="block_wrap">
+	                        			<h4>
+			                        		{% for page in pages %}
+			                        		   {{ page.sidebox.subtitle1.subtitle1 }}
+			                        		{% endfor %}
+	                        			</h4>
+			                    		{% for page in pages %}
+			                    		    <img src="{{ asset('uploads/') }}{{ page.sidebox.upload.url }}">
+			                    		{% endfor %}
+	                        			<p>
+			                        		{% for page in pages %}
+			                        		    {{ page.sidebox.text.text }}
+			                        		{% endfor %}
+	                        			</p>
+		                        		{% for page in pages %}
+	                        				<a class="link-1" href="{{ page.sidebox.link.link }}">Voir Plus</a>
+		                        		{% endfor %}
+	                        		</div>
+                        		</div>
+
+                        		<p class="page_main_text">
+                        		{% for page in pages %}
+                        		    {{ page.main.text.text }}
+                        		{% endfor %}
+                        		</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

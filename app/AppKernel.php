@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new App\PagePartsBundle\AppPagePartsBundle(),
             new App\SubsectionBundle\AppSubsectionBundle(),
             new App\PageBundle\AppPageBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

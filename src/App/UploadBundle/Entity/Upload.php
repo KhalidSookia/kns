@@ -27,7 +27,7 @@ class Upload
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255, nullable=true)
      */
     private $name;
 
@@ -109,6 +109,7 @@ class Upload
             $this->url = null;
         }
     }
+
     /**
     * @ORM\PrePersist()
     * @ORM\PreUpdate()
@@ -131,7 +132,7 @@ class Upload
             return;
         }
         if(null !== $this->tempFilename){
-            $oldFile = $this->getUploadRootDir().'/'.$upload_name.'.'.$this->tempFilename;
+            $oldFile = $this->getUploadRootDir().$this->tempFilename;
             if(file_exists($oldFile)){
                 unlink($oldFile);
             }
@@ -146,13 +147,17 @@ class Upload
     */
     public function preRemoveUpload(){
         $this->tempFilename = $this->getUploadRootDir().'/'.$upload_name.'.'.$this->url;
+        var_dump($this->tempFilename); die();
     }
     /**
     * @ORM\PostRemove()
     */
     public function removeUpload(){
-        if(file_exists($this->tempFilename)){
-            unlink($this->tempFilename);
+        if(null !== $this->tempFilename){
+            $oldFile = $this->getUploadRootDir().$this->tempFilename;
+            if(file_exists($oldFile)){
+                unlink($oldFile);
+            }
         }
     }
 

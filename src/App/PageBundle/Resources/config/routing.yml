@@ -87,3 +87,34 @@ admin_page_services_delete:
 admin_page_services_update:
     pattern:  admin/page/services/update/{id}
     defaults: { _controller: AppPageBundle:Services:update }
+
+
+
+# Les autre pages ---------------------------------------------
+admin_page_page:
+    pattern:  admin/page/page
+    defaults: { _controller: AppPageBundle:Page:index }
+
+admin_page_page_new:
+    pattern:  admin/page/page/new
+    defaults: { _controller: AppPageBundle:Page:new }
+
+admin_page_page_create:
+    pattern:  admin/page/page/create
+    defaults: { _controller: AppPageBundle:Page:create }
+
+admin_page_page_show:
+    pattern:  admin/page/page/{id}
+    defaults: { _controller: AppPageBundle:Page:show }
+
+admin_page_page_edit:
+    pattern:  admin/page/page/{id}/edit
+    defaults: { _controller: AppPageBundle:Page:edit }
+
+admin_page_page_delete:
+    pattern:  admin/page/page/delete/{id}
+    defaults: { _controller: AppPageBundle:Page:delete }
+
+admin_page_page_update:
+    pattern:  admin/page/page/update/{id}
+    defaults: { _controller: AppPageBundle:Page:update }

@@ -9,3 +9,7 @@ app_app_company:
 app_app_services:
     pattern:  /services
     defaults: { _controller: AppAppBundle:App:services }
+
+app_app_page:
+    pattern:  /{slug}
+    defaults: { _controller: AppAppBundle:App:page }

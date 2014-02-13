@@ -1,12 +1,15 @@
 <?php
 
-namespace App\UploadBundle\Form;
+namespace App\PageBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use App\SubsectionBundle\Form\Box3Type;
+use App\SubsectionBundle\Form\Box5Type;
+use App\PagePartsBundle\Form\TitleType;
 
-class UploadType extends AbstractType
+class PageType extends AbstractType
 {
         /**
      * @param FormBuilderInterface $builder
@@ -15,8 +18,11 @@ class UploadType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('file', 'file', array('required' => false))
-            ->add('name', 'text', array('attr' => array('placeholder' => 'Upload Name'), 'required' => false))
+
+            ->add('name', 'text')
+            ->add('main', new Box3Type())
+            ->add('sidebox', new Box5Type())
+            ->add('active')
         ;
     }
     
@@ -26,7 +32,7 @@ class UploadType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'App\UploadBundle\Entity\Upload'
+            'data_class' => 'App\PageBundle\Entity\Page'
         ));
     }
 
@@ -35,6 +41,6 @@ class UploadType extends AbstractType
      */
     public function getName()
     {
-        return 'app_uploadbundle_upload';
+        return 'app_pagebundle_page';
     }
 }
