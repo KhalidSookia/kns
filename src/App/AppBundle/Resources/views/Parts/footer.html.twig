@@ -1,50 +1,73 @@
 {% block footer %}
     <article class="col-2-3">
         <div class="wrap-col">
-        <!-- <h4>Contact Form:</h4>
-        <form id="contact-form" method="post">
-            <fieldset>
-                <label><input name="email" value="Email" onBlur="if(this.value=='') this.value='Email'" onFocus="if(this.value =='Email' ) this.value=''" /></label>
-                <label><input name="subject" value="Subject" onBlur="if(this.value=='') this.value='Subject'" onFocus="if(this.value =='Subject' ) this.value=''" /></label>
-                <textarea onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>
-                <div class="buttons">
-                    <a href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
-                    <a href="#" onClick="document.getElementById('contact-form').submit()">Send</a>
-                </div>                                          
-            </fieldset>           
-        </form> -->
-
-                        <ul>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                        </ul>
-                        <ul>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                            <li>qsdf</li>
-                        </ul>
+            <div class="footer">
+                
+            <!-- <h4>Contact Form:</h4>
+            <form id="contact-form" method="post">
+                <fieldset>
+                    <label><input name="email" value="Email" onBlur="if(this.value=='') this.value='Email'" onFocus="if(this.value =='Email' ) this.value=''" /></label>
+                    <label><input name="subject" value="Subject" onBlur="if(this.value=='') this.value='Subject'" onFocus="if(this.value =='Subject' ) this.value=''" /></label>
+                    <textarea onBlur="if(this.value=='') this.value='Message'" onFocus="if(this.value =='Message' ) this.value=''">Message</textarea>
+                    <div class="buttons">
+                        <a href="#" onClick="document.getElementById('contact-form').reset()">Clear</a>
+                        <a href="#" onClick="document.getElementById('contact-form').submit()">Send</a>
+                    </div>                                          
+                </fieldset>           
+            </form> -->
+            <ul>
+                <li class="sitemap_title"><h1><a href="{{ path('app_app_homepage') }}">Accueil</a></h1></li>
+                <ul>
+                    <li><a href="{{ path('app_app_company') }}">Qui Nous Sommes</a></li>
+                    <li><a href="{{ path('app_app_services') }}">Nos Services</a></li>
+                    <li><a href="{{ path('contact_new') }}">Nous Contacter</a></li>
+                </ul>
+            </ul>
+            
+            <ul>
+                <li class="sitemap_title"><h1><a href="{{ path('app_app_company') }}">Notre Entreprise</a></h1></li>
+                <ul>
+                    <li><a href="{{ path('app_app_homepage') }}solution-hebergement">Solution d'hébergement</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}nom-de-domaine">Nom de domaine</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}contenu">Contenu</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}framework">Framework</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}gestion-de-contenu">Gestion de contenu</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}multi-langue">Multi-Langue</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li class="sitemap_title"><h1><a href="{{ path('app_app_services') }}">Nos Services</a></h1></li>
+                <ul>
+                    <li><a href="{{ path('app_app_homepage') }}referencement">Référencement</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}e-commerce">E-Commerce</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}conseil-et-strategie">Conseil et Stratégie</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}creation-de-site">Création de Site</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}application-web">Application Web</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}refonte-de-site">Refonte de site</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li class="sitemap_title"><h1><a href="{{ path('contact_new') }}">Contact</a></h1></li>
+                <ul>
+                    <li><a href="{{ path('app_app_homepage') }}contact">Formulaire</a></li>
+                    <li><a href="mailto:contact@kns-3w.com">E-mail</a></li>
+                    <li><a href="{{ path('app_app_homepage') }}contact">07 82 18 21 89</a></li>
+                </ul>
+            </ul>
+            </div>
         </div>
     </article>
     <article class="col-1-3">
         <div class="wrap-col">
-        <h4 class="indent-bot">Link to Us:</h4>
+        <h4 class="indent-bot">Suivez nous:</h4>
         <ul class="border-bot">
             <li>
                 <div class="fb-like" data-href="http://www.facebook.com/kns.www" data-layout="button" data-action="recommend" data-show-faces="true" data-share="false"     ></div>
             </li>
-            <li><a href="https://twitter.com/KNS3W" class="twitter-follow-button item-1" data-show-count="false" data-lang="fr" data-size="">Follow @KNS3W</a></li>
+            <li><a href="https://twitter.com/KNS3W" class="twitter-follow-button item-1" data-show-count="false" data-lang="fr" data-size="">Suivez @KNS3W</a></li>
             
         </ul>
-        <p class="p1">Copyright &copy; 2011 </p>
+        <p class="p1">Copyright &copy; 2014 </p>
         </div>
     </article>
 

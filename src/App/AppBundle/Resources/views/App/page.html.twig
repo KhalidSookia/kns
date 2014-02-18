@@ -1,5 +1,11 @@
 {% extends "AppAppBundle::layout.html.twig" %}
 
+{% block title %}
+    {% for page in pages %}
+        {{ page.name }}
+    {% endfor %}
+{% endblock %}
+
 {% block body %}
         
         <!--==============================content================================-->
@@ -40,7 +46,7 @@
 
                         		<p class="page_main_text">
                         		{% for page in pages %}
-                        		    {{ page.main.text.text }}
+                        		    {{ page.main.text.text | raw }}
                         		{% endfor %}
                         		</p>
                             </div>

@@ -23,7 +23,6 @@ class Box2Type extends AbstractType
     {
         $builder
             ->add('upload', new UploadType())
-            ->add('subtitle3', new Subtitle3Type())
             ->add('subtitle1', new Subtitle1Type())
             ->add('short', new ShortType())
             ->add('link', new LinkType())

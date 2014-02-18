@@ -1,5 +1,9 @@
 {% extends "AppAppBundle::layout.html.twig" %}
 
+{% block title %}
+    Notre Entreprise
+{% endblock %}
+
 {% block body %}
         
         <!--==============================content================================-->
@@ -29,11 +33,6 @@
                                     </figure>
                                     <div class="extra-wrap">
                                         <span class="text-2">
-                                        	{% block sidebox1_subtitle3 %}
-                                                {% for company in companies %}
-                                                    {{ company.sidebox1.subtitle3.subtitle3 }}   
-                                                {% endfor %}
-                                        	{% endblock %}
                                         </span>
                                         <h4 class="p1">
                                         	{% block sidebox1_subtitle1 %}
@@ -65,11 +64,6 @@
                                     </figure>
                                     <div class="extra-wrap">
                                         <span class="text-2">
-                                        	{% block sidebox2_subtitle3 %}
-                                                {% for company in companies %}
-                                                    {{ company.sidebox2.subtitle3.subtitle3 }}   
-                                                {% endfor %}
-                                        	{% endblock %}
                                         </span>
                                         <h4 class="p1">
                                         	{% block sidebox2_subtitle1 %}
@@ -101,11 +95,6 @@
                                     </figure>
                                     <div class="extra-wrap">
                                         <span class="text-2">
-                                        	{% block sidebox3_subtitle3 %}
-                                                {% for company in companies %}
-                                                    {{ company.sidebox3.subtitle1.subtitle1 }}   
-                                                {% endfor %}
-                                        	{% endblock %}
                                         </span>
                                         <h4 class="p1">
                                         	{% block sidebox3_subtitle1 %}
@@ -121,42 +110,6 @@
                                         {% endblock %}
                                         <div>
                                         	{% block sidebox3_link %}
-                                        	{% endblock %}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="wrapper indent-bot2">
-                                    <figure class="img-indent">
-                                    	{% block sidebox4_upload %}
-                                            {% for company in companies %}
-                                                <a href=" {{path('app_app_homepage')}}{{ company.sidebox4.link.link }}">
-                                                    <img class="img-border" src="{{ asset('uploads/') }}{{ company.sidebox4.upload.url }}" alt="{{ company.sidebox4.upload.name }}" />
-                                                </a>
-                                            {% endfor %}
-                                    	{% endblock %}
-                                    </figure>
-                                    <div class="extra-wrap">
-                                        <span class="text-2">
-                                        	{% block sidebox4_subtitle3 %}
-                                                {% for company in companies %}
-                                                    {{ company.sidebox4.subtitle1.subtitle1 }}   
-                                                {% endfor %}
-                                        	{% endblock %}
-                                        </span>
-                                        <h4 class="p1">
-                                        	{% block sidebox4_subtitle1 %}
-                                                {% for company in companies %}
-                                                    {{ company.sidebox4.subtitle1.subtitle1 }}   
-                                                {% endfor %}
-                                        	{% endblock %}
-                                        </h4>
-                                        {% block sidebox4_short %}
-                                            {% for company in companies %}
-                                                {{ company.sidebox4.short.short }}   
-                                            {% endfor %}
-                                        {% endblock %}
-                                        <div>
-                                        	{% block sidebox4_link %}
                                         	{% endblock %}
                                         </div>
                                     </div>
@@ -230,13 +183,11 @@
                                             {% endfor %}
                                 		{% endblock %}
                                 	</h3>
-                                    <p>
-                                    	{% block bottombox_text %}
-                                            {% for company in companies %}
-                                                {{ company.bottombox.text.text  }}   
-                                            {% endfor %}
-                                    	{% endblock %}
-                                    </p>
+                                	{% block bottombox_text %}
+                                        {% for company in companies %}
+                                            {{ company.bottombox.text.text | raw }}   
+                                        {% endfor %}
+                                	{% endblock %}
                                 </div>
                                 <div class="wrapper">
 

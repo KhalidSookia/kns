@@ -20,7 +20,6 @@ class MainType extends AbstractType
     {
         $builder
             ->add('title1', new TitleType())
-            ->add('title2', new TitleType())
             ->add('various', new ShortType())
             ->add('frontbox1', new Box1Type())
             ->add('frontbox2', new Box1Type())

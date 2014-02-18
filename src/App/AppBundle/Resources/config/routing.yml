@@ -10,6 +10,10 @@ app_app_services:
     pattern:  /services
     defaults: { _controller: AppAppBundle:App:services }
 
+app_app_sitemap:
+    pattern:  /sitemap
+    defaults: { _controller: AppAppBundle:Sitemaps:sitemap }
+
 app_app_page:
     pattern:  /{slug}
     defaults: { _controller: AppAppBundle:App:page }

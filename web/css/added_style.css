@@ -230,6 +230,10 @@ button[type=submit]{
 	color:#929292;
 }
 
+/*----------------------Main Index Page ----------------------------*/
+.height{
+	margin-top: 80px;
+}
 /*----------------------Company Page -------------------------------*/
 .company_frontbox{
 	width: 260px;
@@ -273,4 +277,38 @@ button[type=submit]{
 
 .pluginConnectButton{
 	line-height: 26px;
+}
+.flashbag .success{
+	/*width: 100%;*/
+	border: 1px solid;
+	margin: 10px 0px;
+	padding:15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image:url('success.png');
+}
+/*----------------------Footer -------------------------------------*/
+
+/*----------------------Footer sitemap -----------------------------*/
+.footer ul{
+	float: left;
+	margin-right: 20px;
+	text-transform: capitalize;
+}
+.footer ul li a{
+	line-height: 25px;
+	text-decoration: none;
+	color: #999
+}
+.footer ul li h1 a{
+	color: #39B9D6;
+	font-size: 14px;
+	line-height: 25px;
+	text-transform:uppercase;
+	margin: 0 0 15px 0;
+}
+.lower_case{
+	text-transform: lowercase;
 }

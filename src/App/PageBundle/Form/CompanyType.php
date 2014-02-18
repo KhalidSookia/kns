@@ -26,7 +26,6 @@ class CompanyType extends AbstractType
             ->add('sidebox1', new Box2Type())
             ->add('sidebox2', new Box2Type())
             ->add('sidebox3', new Box2Type())
-            ->add('sidebox4', new Box2Type())
             ->add('bottombox', new Box4Type())
             ->add('active', 'checkbox', array('required'    => false,))
         ;

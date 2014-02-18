@@ -1,4 +1,10 @@
 {% extends "AppAppBundle::layout.html.twig" %}
+
+{% block title %}
+    {% for service  in services %}
+        {{ service.title1.titre }}
+    {% endfor %}
+{% endblock %}
 {% block body %}
     <!--==============================content================================-->
     <section id="content">
@@ -246,13 +252,11 @@
                                             {% endblock %}
                                         </figure>
                                         <div class="extra-wrap">
-                                        	<p>
-                                                {% block bottombox1_text %}
-                                                    {% for service in services %}
-                                                        {{ service.bottombox1.text.text }}
-                                                    {% endfor %}
-                                                {% endblock %}   
-                                            </p>
+                                            {% block bottombox1_text %}
+                                                {% for service in services %}
+                                                    {{ service.bottombox1.text.text | raw }}
+                                                {% endfor %}
+                                            {% endblock %}   
     <!--                                         <ul class="list-1">
                                             	<li><a href="#">At vero eos et accusamus et iusto</a></li>
                                                 <li><a href="#">Dignissimos ducimus qui blanditiis prae</a></li>
@@ -305,9 +309,6 @@
                                 </div>
                             </div>
                         </article>
-                        {% block active_form_end %}
-                            
-                        {% endblock %}
                     </div>
                 </div>
             </div>

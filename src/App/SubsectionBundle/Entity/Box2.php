@@ -28,12 +28,6 @@ class Box2
     private $subtitle1;
 
     /**
-    * @ORM\OneToOne(targetEntity="App\PagePartsBundle\Entity\Subtitle3", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=true)
-    */
-    private $subtitle3;
-
-    /**
     * @ORM\OneToOne(targetEntity="App\PagePartsBundle\Entity\Short", cascade={"persist"})
     * @ORM\JoinColumn(nullable=true)
     */

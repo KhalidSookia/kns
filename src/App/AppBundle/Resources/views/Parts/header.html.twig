@@ -37,6 +37,13 @@
                         {% endblock %}
     				</div>
                 </div>
+                <div class="flashbag">
+                    {% for message in app.session.flashbag.get('info') %}
+                        <div class="success">
+                            <p class="main">{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </header>
 

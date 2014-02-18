@@ -1,4 +1,4 @@
-admin_contact_new:
+contact_new:
     pattern:  contact
     defaults: { _controller: AppContactBundle:Contact:new }
 

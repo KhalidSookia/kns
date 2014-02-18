@@ -1,4 +1,7 @@
 {% extends "AppAppBundle::layout.html.twig" %}
+{% block title %}
+    Accueil
+{% endblock %}
 {% block header %}
     
 <!--==============================header=================================-->
@@ -6,7 +9,7 @@
             <div class="row-top">
                 <div class="main">
                     <div class="wrapper">
-                        <h1 class="logo"><a href="{{ path('app_app_homepage') }}">K<span class="logo_bg_white">N</span>S 3W</a></h1>
+                        <h1 class="logo"><a href="{{ path('app_app_homepage') }}">K<span class="logo_bg_white">N</span>S-3W</a></h1>
                         <!-- <form id="search-form" method="post" enctype="multipart/form-data">
                         <fieldset>  
                             <div class="search-field">
@@ -71,7 +74,7 @@
                             <em class="text-1 margin-bot">
                             {% block various %}
                                 {% for main in mains %}
-                                    {{ main.various.short }}
+                                    <h1>  {{ main.various.short }}</h1>
                                 {% endfor %}
                             {% endblock %}
                             </em>
@@ -210,57 +213,54 @@
                                 </article>
                                 <article class="col-1-2">
 									<div class="wrap-col">
-                                	<div class="wrapper p1">
-                                    	<figure class="img-indent2">
-                                            {% block frontBox4_upload %}    
-                                                {% for main in mains %}
-                                                    <img src="{{ asset('uploads/') }}{{ main.frontBox4.upload.url }}" alt="{{ main.frontBox4.upload.name }}" />
-                                                {% endfor %}
-                                            {% endblock %}
-                                        </figure>
-                                        <div class="extra-wrap">
-                                        	<div class="indent-top">
-                                            	<h4>
-                                                    {% block frontBox4_subtitle1 %}
-                                                        {% for main in mains %}
-                                                            {{ main.frontbox4.subtitle1.subtitle1 }}
-                                                        {% endfor %}
-                                                    {% endblock %}
-                                                    <em>
-                                                        {% block frontBox4_subtitle2 %}
+                                    	<div class="wrapper p1">
+                                        	<figure class="img-indent2">
+                                                {% block frontBox4_upload %}    
+                                                    {% for main in mains %}
+                                                        <img src="{{ asset('uploads/') }}{{ main.frontBox4.upload.url }}" alt="{{ main.frontBox4.upload.name }}" />
+                                                    {% endfor %}
+                                                {% endblock %}
+                                            </figure>
+                                            <div class="extra-wrap">
+                                            	<div class="indent-top">
+                                                	<h4>
+                                                        {% block frontBox4_subtitle1 %}
                                                             {% for main in mains %}
-                                                                {{ main.frontbox4.subtitle2.subtitle2 }}
+                                                                {{ main.frontbox4.subtitle1.subtitle1 }}
                                                             {% endfor %}
                                                         {% endblock %}
-                                                    </em>
+                                                        <em>
+                                                            {% block frontBox4_subtitle2 %}
+                                                                {% for main in mains %}
+                                                                    {{ main.frontbox4.subtitle2.subtitle2 }}
+                                                                {% endfor %}
+                                                            {% endblock %}
+                                                        </em>
+                                                    </h4>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <p class="prev-indent-bot">
-                                        {% block frontBox4_short %}
+                                        <p class="prev-indent-bot">
+                                            {% block frontBox4_short %}
+                                                {% for main in mains %}
+                                                    {{ main.frontbox4.short.short }}
+                                                {% endfor %}
+                                            {% endblock %}
+                                        </p>
+                                        {% block frontBox4_link %}
                                             {% for main in mains %}
-                                                {{ main.frontbox4.short.short }}
+                                                <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.frontBox4.link.link }}">Voir Plus</a>
                                             {% endfor %}
                                         {% endblock %}
-                                    </p>
-                                    {% block frontBox4_link %}
-                                        {% for main in mains %}
-                                            <a class="link-1" href="{{ path('app_app_homepage') }}{{ main.frontBox4.link.link }}">Voir Plus</a>
-                                        {% endfor %}
-                                    {% endblock %}
-									</div>
+    								</div>
                                 </article>
                             </div>
 							</div>
                         </article>
                         <article class="col-1-3">
 							<div class="wrap-col">
+                            <div class="height"></div>
                         	<h3>
-                            {% block title2 %}
-                                {% for main in mains %}
-                                    {{ main.title2.titre}}
-                                {% endfor %}
-                            {% endblock %}
                             </h3>
                             <div class="wrapper p3">
                             	<figure class="img-indent">
@@ -274,11 +274,6 @@
                                 </figure>
                                 <div class="extra-wrap">
                                 	<span class="text-2">
-                                        {% block sidebox1_subtitle3 %}
-                                            {% for main in mains %}
-                                                {{ main.sidebox1.subtitle3.subtitle3 }}
-                                            {% endfor %}
-                                        {% endblock %}
                                     </span>
                                     <h4 class="p2">
                                         {% block sidebox1_subtitle1 %}
@@ -313,11 +308,6 @@
                                 </figure>
                                 <div class="extra-wrap">
                                 	<span class="text-2">
-                                        {% block sidebox2_subtitle3 %}
-                                            {% for main in mains %}
-                                                {{ main.sidebox2.subtitle3.subtitle3 }}
-                                            {% endfor %}
-                                        {% endblock %}
                                     </span>
                                     <h4 class="p1">
                                         {% block sidebox2_subtitle1 %}
@@ -352,11 +342,6 @@
                                 </figure>
                                 <div class="extra-wrap">
                                 	<span class="text-2">
-                                        {% block sidebox3_subtitle3 %}
-                                            {% for main in mains %}
-                                                {{ main.sidebox3.subtitle3.subtitle3 }}
-                                            {% endfor %}
-                                        {% endblock %}
                                     </span>
                                     <h4 class="prev-indent-bot">
                                         {% block sidebox3_subtitle1 %}

@@ -53,7 +53,18 @@ class ContactController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_contact_show', array('id' => $entity->getId())));
+
+             $message = \Swift_Message::newInstance()
+            ->setSubject('Contact KNS-3W')
+            ->setFrom('no-reply@kns-3w.com')
+            ->setTo('khalidsookia@gmail.com')
+            ->setBody("Un nouveau contact a été fait sur KNS-3W.");
+            
+            $this->get('mailer')->send($message);
+
+            $this->get('session')->getFlashBag()->add('info', 'Votre message a bien été envoyé.');
+
+            return $this->redirect($this->generateUrl('contact_new'));
         }
 
         return array(

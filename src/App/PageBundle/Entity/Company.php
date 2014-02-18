@@ -52,12 +52,6 @@ class Company
     private $sidebox3;
 
     /**
-    * @ORM\OneToOne(targetEntity="App\SubsectionBundle\Entity\Box2", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=true)
-    */
-    private $sidebox4;
-
-    /**
     * @ORM\OneToOne(targetEntity="App\SubsectionBundle\Entity\Box3", cascade={"persist"})
     * @ORM\JoinColumn(nullable=true)
     */
@@ -229,29 +223,6 @@ class Company
     public function getSidebox3()
     {
         return $this->sidebox3;
-    }
-
-    /**
-     * Set sidebox4
-     *
-     * @param \App\SubsectionBundle\Entity\Box2 $sidebox4
-     * @return Company
-     */
-    public function setSidebox4(\App\SubsectionBundle\Entity\Box2 $sidebox4 = null)
-    {
-        $this->sidebox4 = $sidebox4;
-
-        return $this;
-    }
-
-    /**
-     * Get sidebox4
-     *
-     * @return \App\SubsectionBundle\Entity\Box2 
-     */
-    public function getSidebox4()
-    {
-        return $this->sidebox4;
     }
 
     /**

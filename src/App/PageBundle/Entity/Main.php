@@ -28,12 +28,6 @@ class Main
     private $title1;
 
     /**
-    * @ORM\OneToOne(targetEntity="App\PagePartsBundle\Entity\Title", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=true)
-    */
-    private $title2;
-
-    /**
     * @ORM\OneToOne(targetEntity="App\PagePartsBundle\Entity\Short", cascade={"persist"})
     * @ORM\JoinColumn(nullable=true)
     */
